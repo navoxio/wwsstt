@@ -1,0 +1,3294 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wavestake | The fastest growing crypto platform</title>
+
+    <link rel="stylesheet" href="./baseAssets/css/style.css" />
+    <link rel="stylesheet" href="./baseAssets/css/stakingStyles.css">
+    <link rel="icon" href="./baseAssets/img/favicon.png">
+
+    <!-- META -->
+    <meta name="keywords" content="Wavestake, Coin, Wavestake.com, Crypto, Cryptocurrency, Trade crypto, Swap crypto, Buy crypto, Sell crypto, Exchange crypto, Buy bitcoin, Buy ethereum, Receive crypto, Send Crypto" />
+    <meta name="description" content="Enter a world of decentralized finance accessible to anyone, anywhere, at anytime. The Wavestake wallet combines multiple features into the ultimate user friendly platform for everyone." />
+    <meta name="author" content="Wavestake web development team" />
+    <meta name="robots" content="max-image-preview:large"/>
+
+    <!-- OG -->
+    <meta property="og:url" content="https://www.Wavestake.com" />
+    <meta property = "og: title" content = "Wavestake | The fastest growing crypto platform" />
+    <meta property = "og: image" itemprop="image" content = "https://firebasestorage.googleapis.com/v0/b/wstake-9e6f7.appspot.com/o/baseAssets%2Fimg%2FogImage.png?alt=media&token=6c8d65fc-f199-4af1-afb5-b82979568b91" />
+    <meta property="og:image:width" content="2500">
+    <meta property="og:image:height" content="1900">
+    <meta property="og:image:alt" content="Wavestake | The fastest growing crypto platform">
+    <meta property = "og: type" content = "website" />
+    <meta property = "og: description" content = "Enter a world of decentralized finance accessible to anyone, anywhere, at anytime. The Wavestake wallet combines multiple features into the ultimate user friendly platform for everyone." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta  name="twitter:site" content="@Wavestake.com">
+    <meta  name="twitter:creator" content="@Wavestake.com">
+    <meta  name="twitter:title" content="Wavestake | The fastest growing crypto platform">
+    <meta  name="twitter:description" content="Enter a world of decentralized finance accessible to anyone, anywhere, at anytime. The Wavestake wallet combines multiple features into the ultimate user friendly platform for everyone.">
+    <meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/wstake-9e6f7.appspot.com/o/baseAssets%2Fimg%2FogImage.png?alt=media&token=6c8d65fc-f199-4af1-afb5-b82979568b91">
+    <meta property="twitter:image:width" content="2500">
+    <meta property="twitter:image:height" content="1900">
+
+    <script>
+      var viewportmeta = document.querySelector('meta[name="viewport"]');
+      if (viewportmeta) {
+          if (screen.width < 375) {
+              var newScale = screen.width / 375;
+              viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+          } else {
+              viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+          }
+      }
+    </script>
+
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/jquery.min.js"
+      id="jquery-core-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/jquery-migrate.min.js"
+      id="jquery-migrate-js"
+    ></script>
+    <script type="text/javascript" id="jquery-js-after">
+      window.scope_array = [];
+      window.backend = 0;
+      jQuery.cachedScript = function (url, options) {
+        // Allow user to set any option except for dataType, cache, and url.
+        options = jQuery.extend(options || {}, {
+          dataType: "script",
+          cache: true,
+          url: url,
+        });
+        // Return the jqXHR object so we can chain callbacks.
+        return jQuery.ajax(options);
+      };
+      jQuery(window).on("elementor/frontend/init", function () {
+        elementorFrontend.hooks.addAction(
+          "frontend/element_ready/global",
+          function ($scope, $) {
+            if ("undefined" == typeof $scope) {
+              return;
+            }
+            if ($scope.hasClass("jws-particle-yes")) {
+              window.scope_array.push($scope);
+              $scope.find(".jws-particle-wrapper").addClass("js-is-enabled");
+            } else {
+              return;
+            }
+            if (
+              elementorFrontend.isEditMode() &&
+              $scope.find(".jws-particle-wrapper").hasClass("js-is-enabled") &&
+              window.backend == 0
+            ) {
+              var jws_url = jws_script.jws_particles_url;
+              jQuery.cachedScript(jws_url);
+              window.backend = 1;
+            } else if (elementorFrontend.isEditMode()) {
+              var jws_url = jws_script.jws_particles_url;
+              jQuery.cachedScript(jws_url).done(function () {
+                var flag = true;
+              });
+            }
+          }
+        );
+      });
+      jQuery(document).ready(function () {
+        if (jQuery.find(".jws-particle-yes").length < 1) {
+          return;
+        }
+        var jws_url = jws_script.jws_particles_url;
+        jQuery.cachedScript = function (url, options) {
+          // Allow user to set any option except for dataType, cache, and url.
+          options = jQuery.extend(options || {}, {
+            dataType: "script",
+            cache: true,
+            url: url,
+          });
+          // Return the jqXHR object so we can chain callbacks.
+          return jQuery.ajax(options);
+        };
+        jQuery.cachedScript(jws_url);
+      });
+      jQuery(document).ready(function () {
+        if (jQuery.find(".jws-line-yes").length < 1) {
+          return;
+        }
+        jQuery(".jws-line-yes").each(function () {
+          var id = jQuery(this).data("id");
+          line_script(id);
+        });
+        function line_script(id) {
+          $scope = jQuery(".elementor-element-" + id);
+          $content = jQuery(".line-" + id);
+          if (
+            $scope.find(".elementor-background-overlay ~ .elementor-container")
+              .length == 0
+          ) {
+            $scope.prepend($content);
+          } else {
+            $scope.find(".elementor-background-overlay").after($content);
+          }
+        }
+      });
+      jQuery(document).ready(function () {
+        if (jQuery.find(".jws-shade-yes").length < 1) {
+          return;
+        }
+        jQuery(".jws-shade-yes").each(function () {
+          var id = jQuery(this).data("id");
+          shade_script(id);
+        });
+        function shade_script(id) {
+          $scope = jQuery(".elementor-element-" + id);
+          $content = jQuery(".shade-" + id);
+          if (
+            $scope.find(".elementor-background-overlay ~ .elementor-container")
+              .length == 0
+          ) {
+            $scope.prepend($content);
+          } else {
+            $scope.find(".elementor-background-overlay").after($content);
+          }
+        }
+      });
+    </script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/optimize.js"
+      id="jws-optimize-js"
+    ></script>
+  </head>
+
+  <body
+    data-rsssl="1"
+    class="page-template-default page page-id-66 wp-embed-responsive theme-crypteck woocommerce-no-js button-default user-not-logged-in single-product-default elementor-default elementor-kit-5 elementor-page elementor-page-66"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-dark-grayscale">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0 0.49803921568627" />
+            <feFuncG type="table" tableValues="0 0.49803921568627" />
+            <feFuncB type="table" tableValues="0 0.49803921568627" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-grayscale">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0 1" />
+            <feFuncG type="table" tableValues="0 1" />
+            <feFuncB type="table" tableValues="0 1" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-purple-yellow">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR
+              type="table"
+              tableValues="0.54901960784314 0.98823529411765"
+            />
+            <feFuncG type="table" tableValues="0 1" />
+            <feFuncB
+              type="table"
+              tableValues="0.71764705882353 0.25490196078431"
+            />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-blue-red">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0 1" />
+            <feFuncG type="table" tableValues="0 0.27843137254902" />
+            <feFuncB
+              type="table"
+              tableValues="0.5921568627451 0.27843137254902"
+            />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-midnight">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0 0" />
+            <feFuncG type="table" tableValues="0 0.64705882352941" />
+            <feFuncB type="table" tableValues="0 1" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-magenta-yellow">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0.78039215686275 1" />
+            <feFuncG type="table" tableValues="0 0.94901960784314" />
+            <feFuncB
+              type="table"
+              tableValues="0.35294117647059 0.47058823529412"
+            />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-purple-green">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR
+              type="table"
+              tableValues="0.65098039215686 0.40392156862745"
+            />
+            <feFuncG type="table" tableValues="0 1" />
+            <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-blue-orange">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0.098039215686275 1" />
+            <feFuncG type="table" tableValues="0 0.66274509803922" />
+            <feFuncB
+              type="table"
+              tableValues="0.84705882352941 0.41960784313725"
+            />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div id="page" class="site">
+
+      <!-- NAV -->
+      <header id="masthead" class="site-header">
+        <div class="site-branding-container">
+          <div class="jws_header">
+            <div
+              data-elementor-type="wp-post"
+              data-elementor-id="920"
+              class="elementor elementor-920"
+            >
+              <div class="cafe-sticky-row-container">
+                <section
+                  class="elementor-section elementor-top-section elementor-element elementor-element-b585331 cafe-row-sticky desktop-sticky cafe-scroll-up-sticky elementor-hidden-tablet elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                  data-id="b585331"
+                  data-element_type="section"
+                >
+                  <div
+                    class="elementor-container elementor-column-gap-default jws_section_"
+                  >
+                    <div
+                      class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-f9ac715"
+                      data-id="f9ac715"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-widget-wrap elementor-element-populated"
+                      >
+                        <div
+                          class="elementor-element elementor-element-177220b elementor-before-menu-skin-line elementor_jws_menu_layout_menu_horizontal elementor-jws-menu-skin-skin1 elementor-widget elementor-widget-jws_menu_nav"
+                          data-id="177220b"
+                          data-element_type="widget"
+                          data-widget_type="jws_menu_nav.default"
+                        >
+                          <div class="elementor-widget-container">
+                            <div class="jws_main_menu sub_skin_none">
+                              <div class="jws_main_menu_inner open">
+                                <ul id="menu-1-177220b" class="nav">
+                                  <li
+                                    id="menu-item-72"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home current-menu-ancestor current-menu-parent menu-item-72 menu-item-design-standard"
+                                  >
+                                    <a href="./"><span>Home</span></a>
+                                  </li>
+
+                                  <li
+                                    id="menu-item-72"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home current-menu-ancestor current-menu-parent menu-item-72 menu-item-design-standard"
+                                  >
+                                    <a href="./about"
+                                      ><span>About us</span></a
+                                    >
+                                  </li>
+
+                                  <li
+                                    id="menu-item-72"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home current-menu-ancestor current-menu-parent menu-item-72 menu-item-design-standard"
+                                  >
+                                    <a href="./staking"
+                                      ><span>Staking</span></a
+                                    >
+                                  </li>
+
+                                 
+                                  <li
+                                    id="menu-item-88"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-88 menu-item-design-standard"
+                                  >
+                                    <a href="#"><span>Legal policy</span></a>
+                                    <ul class="sub-menu">
+                                      <li
+                                        id="menu-item-5110"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5110 menu-item-design-standard"
+                                      >
+                                        <a href="./privacy"
+                                          ><span>Privacy policy</span></a
+                                        >
+                                      </li>
+
+                                      <li
+                                        id="menu-item-5110"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5110 menu-item-design-standard"
+                                      >
+                                        <a href="./user-agree"
+                                          ><span>User agreement</span></a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </li>
+
+                                  <li
+                                    id="menu-item-72"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home current-menu-ancestor current-menu-parent menu-item-72 menu-item-design-standard"
+                                  >
+                                    <a href="./contact"
+                                      ><span>Contact us</span></a
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-ae8a7a8"
+                      data-id="ae8a7a8"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-widget-wrap elementor-element-populated"
+                      >
+                        <div
+                          class="elementor-element elementor-element-39b6e90 elementor-widget elementor-widget-jws_logo"
+                          data-id="39b6e90"
+                          data-element_type="widget"
+                          data-widget_type="jws_logo.default"
+                        >
+                          <div class="elementor-widget-container">
+                            <div class="elementor-logo">
+                              <a href="/">
+                                <span class="logo-inner">
+                                  <img
+                                    style="width: 35%;"
+                                    src="./baseAssets/img/logoLong.png"
+                                    class="logo-image attachment-full"
+                                    alt=""
+                                    loading="lazy"
+                                  />
+                                </span>
+                                <span
+                                  style="
+                                    font-size: 25px;
+                                    margin-top: 45px;
+                                    font-family: Neue Machina;
+                                  "
+                                ></span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-f90832d"
+                      data-id="f90832d"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-widget-wrap elementor-element-populated"
+                      >
+                        <div
+                          class="elementor-element elementor-element-7c2b8b3 elementor-widget__width-auto elementor-widget elementor-widget-Offcanvas"
+                          data-id="7c2b8b3"
+                          data-element_type="widget"
+                          data-widget_type="Offcanvas.default"
+                        >
+                          <div class="elementor-widget-container">
+                            <div class="jws-offcanvas-action-wrap">
+                              <div
+                                class="jws-button-wrapper elementor-button-wrapper elementor-align-left"
+                              >
+                                
+                                <a
+                                  class="jws-open-url-login jws-offcanvas-trigger action jws-elementor-button"
+                                  href="https://account.wavestake.com/sign-in"
+                                  data-offcanvas="7c2b8b3"
+                                >
+                                  <span
+                                    class="elementor-button-content-wrapper elementor-button-content-wrapper"
+                                  >
+                                    <span
+                                      class="elementor-button-text elementor-inline-editing"
+                                      data-elementor-setting-key="btn_text"
+                                      data-elementor-inline-editing-toolbar="none"
+                                      >Sign in</span
+                                    >
+                                  </span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-fd15011 elementor-hidden-desktop elementor-hidden-laptop elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                data-id="fd15011"
+                data-element_type="section"
+              >
+                <div
+                  class="elementor-container elementor-column-gap-default jws_section_"
+                >
+                  <div
+                    class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-497b5f6"
+                    data-id="497b5f6"
+                    data-element_type="column"
+                  >
+                    <div
+                      class="elementor-widget-wrap elementor-element-populated"
+                    >
+                      <div
+                        class="elementor-element elementor-element-55dfc7c elementor-widget elementor-widget-jws_logo"
+                        data-id="55dfc7c"
+                        data-element_type="widget"
+                        data-widget_type="jws_logo.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div class="elementor-logo">
+                            <a href="/">
+                              <span class="logo-inner">
+                                <img
+                                  style="width: 70%;"
+                                  src="./baseAssets/img/logoLong.png"
+                                  class="logo-image attachment-full"
+                                  alt=""
+                                  loading="lazy"
+                                />
+                              </span>
+                              <span class="logo-sticky"> </span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-1a83c60"
+                    data-id="1a83c60"
+                    data-element_type="column"
+                  >
+                    <div
+                      class="elementor-widget-wrap elementor-element-populated"
+                    >
+                      <div
+                        class="elementor-element elementor-element-51f6543 jws-offcanvas-trigger-align-inline elementor-widget elementor-widget-Offcanvas"
+                        data-id="51f6543"
+                        data-element_type="widget"
+                        data-widget_type="Offcanvas.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div
+                            id="51f6543-overlay"
+                            data-trigger-on="button"
+                            data-close-on-overlay="yes"
+                            data-close-on-esc="yes"
+                            data-content="saved_page_templates"
+                            data-canvas-width="300"
+                            data-canvas-width-tablet="90"
+                            data-canvas-width-mobile=""
+                            data-canvas-unit="px"
+                            data-canvas-unit-tablet="%"
+                            data-canvas-unit-mobile="%"
+                            data-id="51f6543"
+                            class="jws-offcanvas-parent-wrapper jws-module-content uaoffcanvas-51f6543"
+                          >
+                            <div
+                              id="offcanvas-51f6543"
+                              class="jws-offcanvas jws-custom-offcanvas jws-show-previewjws-show-animation jws-offcanvas-type-fade jws-offcanvas-shadow-inset position-at-left"
+                            >
+                              <div class="jws-offcanvas-content">
+                                <div
+                                  class="jws-offcanvas-text jws-offcanvas-content-data"
+                                >
+                                  <div class="jws-offcanvas-action-wrap">
+                                    <div
+                                      class="jws-offcanvas-close-icon-wrapper elementor-icon-wrapper elementor-clickable jws-offcanvas-close-icon-position-right-top"
+                                    >
+                                      <span
+                                        class="jws-offcanvas-close elementor-icon-link elementor-clickable"
+                                      >
+                                        <span class="jws-offcanvas-close-icon">
+                                          <i
+                                            aria-hidden="true"
+                                            class="jws-icon-cross"
+                                          ></i>
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div
+                                    data-elementor-type="page"
+                                    data-elementor-id="9068"
+                                    class="elementor elementor-9068"
+                                  >
+                                    <div
+                                      class="elementor-section elementor-top-section elementor-element elementor-element-488c225 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                      data-id="488c225"
+                                      data-element_type="section"
+                                    >
+                                      <div
+                                        class="elementor-container elementor-column-gap-no jws_section_"
+                                      >
+                                        <div
+                                          class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5997a99"
+                                          data-id="5997a99"
+                                          data-element_type="column"
+                                        >
+                                          <div
+                                            class="elementor-widget-wrap elementor-element-populated"
+                                          >
+                                            <div
+                                              class="elementor-element elementor-element-3c0d1a7 elementor-widget elementor-widget-jws_logo"
+                                              data-id="3c0d1a7"
+                                              data-element_type="widget"
+                                              data-widget_type="jws_logo.default"
+                                            >
+                                              <div
+                                                class="elementor-widget-container"
+                                              >
+                                                <div class="elementor-logo">
+                                                  <a
+                                                    href="./"
+                                                  >
+                                                    <span class="logo-inner">
+                                                      <img
+                                                        style="width: 50%;"
+                                                        src="./baseAssets/img/logoLong.png"
+                                                        class="logo-image attachment-full"
+                                                        alt=""
+                                                        loading="lazy"
+                                                      />
+                                                    </span>
+                                                    <span class="logo-sticky">
+                                                    </span>
+                                                  </a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div
+                                              class="elementor-element elementor-element-d2794fe elementor-before-menu-skin-line elementor-jws-menu-align-left elementor_jws_menu_layout_menu_vertical elementor-jws-menu-skin-skin1 elementor-widget elementor-widget-jws_menu_nav"
+                                              data-id="d2794fe"
+                                              data-element_type="widget"
+                                              data-widget_type="jws_menu_nav.default"
+                                            >
+                                              <div
+                                                class="elementor-widget-container"
+                                              >
+                                                <div
+                                                  class="jws_main_menu sub_skin_none"
+                                                >
+                                                  <div
+                                                    class="jws_main_menu_inner open"
+                                                  >
+                                                    <ul
+                                                      id="menu-1-d2794fe"
+                                                      class="nav"
+                                                    >
+                                                      <li
+                                                        id="menu-item-9134"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9134 menu-item-design-standard"
+                                                      >
+                                                        <a
+                                                          href="./"
+                                                          ><span
+                                                            >Home</span
+                                                          ></a
+                                                        >
+                                                      </li>
+
+                                                      <li
+                                                        id="menu-item-9134"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9134 menu-item-design-standard"
+                                                      >
+                                                        <a
+                                                          href="./about"
+                                                          ><span
+                                                            >About</span
+                                                          ></a
+                                                        >
+                                                      </li>
+
+                                                     <li
+                                                        id="menu-item-9134"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9134 menu-item-design-standard"
+                                                      >
+                                                        <a
+                                                          href="./staking"
+                                                          ><span
+                                                            >Staking</span
+                                                          ></a
+                                                        >
+                                                      </li>
+
+                                                      <li
+                                                        id="menu-item-9128"
+                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-89 menu-item-design-standard"
+                                                      >
+                                                        <a href="#"
+                                                          ><span
+                                                            >Legal policy</span
+                                                          ></a
+                                                        >
+                                                        <ul class="sub-men">
+                                                          <li
+                                                            id="menu-item-9133"
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9133 menu-item-design-standard"
+                                                          >
+                                                            <a
+                                                              href="./privacy"
+                                                              ><span
+                                                                >Privacy
+                                                                policy</span
+                                                              ></a
+                                                            >
+                                                          </li>
+                                                          <li
+                                                            id="menu-item-9130"
+                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9130 menu-item-design-standard"
+                                                          >
+                                                            <a
+                                                              href="./user-agree"
+                                                              ><span
+                                                                >User
+                                                                agreement</span
+                                                              ></a
+                                                            >
+                                                          </li>
+                                                        </ul>
+                                                      </li>
+                                                      <li
+                                                        id="menu-item-9134"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9134 menu-item-design-standard"
+                                                      >
+                                                        <a
+                                                          href="./contact"
+                                                          ><span
+                                                            >Contact</span
+                                                          ></a
+                                                        >
+                                                      </li>
+                                                    </ul>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="jws-offcanvas-overlay elementor-clickable"
+                            ></div>
+                          </div>
+                          <div class="jws-offcanvas-action-wrap">
+                            <div
+                              class="jws-button-wrapper elementor-button-wrapper elementor-align-right"
+                            >
+                              <a
+                                class="jws-offcanvas-trigger action jws-elementor-button"
+                                href="javascript:void(1);"
+                                data-offcanvas="51f6543"
+                              >
+                                <span class="elementor-button-content-wrapper">
+                                  <span
+                                    class="elementor-button-text elementor-inline-editing"
+                                    data-elementor-setting-key="btn_text_register"
+                                    data-elementor-inline-editing-toolbar="none"
+                                  ></span>
+                                </span>
+                              </a>
+                              <a
+                                class="jws-offcanvas-trigger action jws-elementor-button"
+                                href="javascript:void(0);"
+                                data-offcanvas="51f6543"
+                              >
+                                <span
+                                  class="elementor-button-content-wrapper elementor-button-content-wrapper"
+                                >
+                                  <span
+                                    class="elementor-button-icon elementor-align-icon-right"
+                                  >
+                                    <i
+                                      aria-hidden="true"
+                                      class="jws-icon-menu_alt"
+                                    ></i>
+                                  </span>
+                                  <span
+                                    class="elementor-button-text elementor-inline-editing"
+                                    data-elementor-setting-key="btn_text"
+                                    data-elementor-inline-editing-toolbar="none"
+                                  ></span>
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div id="content" class="site-content">
+        <div id="primary" class="content-area">
+          <main id="main" class="site-main">
+            <article
+              id="post-5040"
+              class="post-5040 page type-page status-publish hentry"
+            >
+              <div class="entry-content">
+                <div
+                  data-elementor-type="wp-page"
+                  data-elementor-id="5040"
+                  class="elementor elementor-5040"
+                >
+                  
+
+                  <div class="shade_animation shade-b5ee0d7">
+                    <div class="shade_wrap elementor-repeater-item-29fdc84">
+                      <div class="shade_wrap_inner infinite">
+                        <img
+                          src="./baseAssets/img/Earth-network.jpg"
+                          alt="shade_image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- BANNER -->
+                  <section
+                    class="elementor-section elementor-top-section elementor-element elementor-element-b5ee0d7 jws-shade-yes elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="b5ee0d7"
+                    data-element_type="section" style="margin-top: 40px;"
+                  >
+                    <div
+                      class="elementor-container elementor-column-gap-default jws_section_"
+                    >
+
+                      <div
+                        class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-94c5346"
+                        data-id="94c5346"
+                        data-element_type="column"
+                      >
+                        <div
+                          class="elementor-widget-wrap elementor-element-populated"
+                        >
+                          <div
+                            class="elementor-element elementor-element-a7ad128 elementor-widget elementor-widget-text-editor"
+                            data-id="a7ad128"
+                            data-element_type="widget"
+                            data-widget_type="text-editor.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <p>Staking</p>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-24acb75 elementor-widget elementor-widget-heading"
+                            data-id="24acb75"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h3
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                                Beat volatility and earn
+                              </h3>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-c4936e6 elementor-widget elementor-widget-text-editor"
+                            data-id="c4936e6"
+                            data-element_type="widget"
+                            data-widget_type="text-editor.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <p>
+                                Make your digital assets work for you with Wavestake. Fund your wallet and start earning interest on our supported cryptocurrencies.
+                                
+                              </p>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-549ac68 elementor-widget elementor-widget-text-editor"
+                            data-id="549ac68"
+                            data-element_type="widget"
+                            data-widget_type="text-editor.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <p>
+                                 While buying crypto and HODLing it until the price goes up is a great option for turning a profit, it requires lots of time and a bit of luck. With Wavestake, you can put your idle assets to work straight away and have a predictable source of passive income. Just fund your wallet and start earning annual interest immediately – no further action is needed on your side.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                                class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-bc2744a"
+                                data-id="bc2744a"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-415f87a elementor-invisible elementor-widget elementor-widget-image"
+                                    data-id="415f87a"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeIn"}'
+                                    data-widget_type="image.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <img
+                                        width="613"
+                                        height="613"
+                                        src="./baseAssets/img/banner2.png"
+                                        class="elementor-animation-shrink attachment-full size-full"
+                                        alt=""
+                                        loading="lazy"
+                                        srcset="
+                                          ./baseAssets/img/banner2.png         613w,
+                                          ./baseAssets/img/banner2.png 300w,
+                                          ./baseAssets/img/banner2.png 150w,
+                                          ./baseAssets/img/banner2.png 115w,
+                                          ./baseAssets/img/banner2.png 480w,
+                                          ./baseAssets/img/banner2.png 600w,
+                                          ./baseAssets/img/banner2.png 100w
+                                        "
+                                        sizes="(max-width: 613px) 100vw, 613px"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                      </div>
+
+                    </div>
+                  </section>
+
+
+                  <!-- WHY US -->
+                  <section
+                    class="elementor-section elementor-top-section elementor-element elementor-element-d9e9849 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="d9e9849"
+                    data-element_type="section"
+                  >
+                    <div
+                      class="elementor-container elementor-column-gap-default jws_section_"
+                    >
+                      <div
+                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-dcf1177"
+                        data-id="dcf1177"
+                        data-element_type="column"
+                      >
+                        <div
+                          class="elementor-widget-wrap elementor-element-populated"
+                        >
+                          <div
+                            class="elementor-element elementor-element-26d0b64 elementor-widget elementor-widget-heading"
+                            data-id="26d0b64"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h4
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                                Why earn with us?
+                              </h4>
+                            </div>
+                          </div>
+
+                          <section
+                            class="elementor-section elementor-inner-section elementor-element elementor-element-f93dba0 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                            data-id="f93dba0"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-no jws_section_"
+                            >
+                              <div
+                                class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-0ce5b7a"
+                                data-id="0ce5b7a"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-ce94e07 elementor-position-left elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-widget elementor-widget-jws_info_box"
+                                    data-id="ce94e07"
+                                    data-element_type="widget"
+                                    data-settings='{"position":"left","align":"left"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout1">
+                                        <div class="jws-info-box-inner">
+                                          <div class="box-icon"></div>
+                                          <div class="jws-box-content">
+                                            <div class="box-sub"></div>
+                                            <a href="#">
+                                              <h6 class="box-title">Daily Payouts</h6>
+                                            </a>
+                                            <div class="box-content">
+                                              <p>With Wavestake's unique daily payouts*, you get instant access to the interest you’ve earned. Your yield is automatically paid to your Wavestake account, so the next day, you begin earning interest on top of it, too. That way your daily payouts only get bigger over time!</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-55631f2"
+                                data-id="55631f2"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-9387821 elementor-position-left elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-widget elementor-widget-jws_info_box"
+                                    data-id="9387821"
+                                    data-element_type="widget"
+                                    data-settings='{"position":"left","align":"left"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout1">
+                                        <div class="jws-info-box-inner">
+                                          <div class="box-icon"></div>
+                                          <div class="jws-box-content">
+                                            <div class="box-sub"></div>
+                                            <a href="#">
+                                              <h6 class="box-title">
+                                                Zero Fees
+                                              </h6>
+                                            </a>
+                                            <div class="box-content">
+                                              <p>We never charge you any hidden fees or commissions for adding, withdrawing or holding funds. With our liquid staking option, you can withdraw at any time without losing your accrued interest or add funds whenever you want to earn even more.</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-713c4d6"
+                                data-id="713c4d6"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-239afb8 elementor-position-left elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-widget elementor-widget-jws_info_box"
+                                    data-id="239afb8"
+                                    data-element_type="widget"
+                                    data-settings='{"position":"left","align":"left"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout1">
+                                        <div class="jws-info-box-inner">
+                                          <div class="box-icon"></div>
+                                          <div class="jws-box-content">
+                                            <div class="box-sub"></div>
+                                            <a href="#">
+                                              <h6 class="box-title">Top-Tier Insurance</h6>
+                                            </a>
+                                            <div class="box-content">
+                                              <p>All digital assets held in your Wavestake account benefit from an insurance by our industry-renowned custodians in the event of third-party hacks, theft, or loss of private keys.</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <section
+                            class="elementor-section elementor-inner-section elementor-element elementor-element-a74adbe elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                            data-id="a74adbe"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-no jws_section_"
+                            >
+                              <div
+                                class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-d1e5f2a"
+                                data-id="d1e5f2a"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-6a98b03 elementor-position-left elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-widget elementor-widget-jws_info_box"
+                                    data-id="6a98b03"
+                                    data-element_type="widget"
+                                    data-settings='{"position":"left","align":"left"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout1">
+                                        <div class="jws-info-box-inner">
+                                          <div class="box-icon"></div>
+                                          <div class="jws-box-content">
+                                            <div class="box-sub"></div>
+                                            <a href="#">
+                                              <h6 class="box-title">
+                                                $5M+
+                                              </h6>
+                                            </a>
+                                            <div class="box-content">
+                                              <p>
+                                                Already paid out in interest
+                                              </p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-aa48762"
+                                data-id="aa48762"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-113575a elementor-position-left elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-widget elementor-widget-jws_info_box"
+                                    data-id="113575a"
+                                    data-element_type="widget"
+                                    data-settings='{"position":"left","align":"left"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout1">
+                                        <div class="jws-info-box-inner">
+                                          <div class="box-icon"></div>
+                                          <div class="jws-box-content">
+                                            <div class="box-sub"></div>
+                                            <a href="#">
+                                              <h6 class="box-title">
+                                                60K+
+                                              </h6>
+                                            </a>
+                                            <div class="box-content">
+                                              <p>Wavestake users worldwide </p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-e322c4b"
+                                data-id="e322c4b"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-1a4fd1d elementor-position-left elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-widget elementor-widget-jws_info_box"
+                                    data-id="1a4fd1d"
+                                    data-element_type="widget"
+                                    data-settings='{"position":"left","align":"left"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout1">
+                                        <div class="jws-info-box-inner">
+                                          <div class="box-icon"></div>
+                                          <div class="jws-box-content">
+                                            <div class="box-sub"></div>
+                                            <a href="#">
+                                              <h6 class="box-title">
+                                                15
+                                              </h6>
+                                            </a>
+                                            <div class="box-content">
+                                              <p>Cryptocurrencies to earn on</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <br>
+                  <!-- ETH 2.0 STAKING -->
+                  <section
+                    class="elementor-section elementor-top-section elementor-element elementor-element-299853f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="299853f"
+                    data-element_type="section"
+                  >
+                    <div
+                      class="elementor-container elementor-column-gap-default jws_section_"
+                    >
+                      <div
+                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8c6cb4f"
+                        data-id="8c6cb4f"
+                        data-element_type="column"
+                      >
+                        <div
+                          class="elementor-widget-wrap elementor-element-populated"
+                        >
+                          <div
+                            class="elementor-element elementor-element-557d9be elementor-widget elementor-widget-heading"
+                            data-id="557d9be"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                        
+                            <div class="elementor-widget-container">
+                              <h4
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                               ETH 2.0 staking
+                              </h4>
+                              <p>ETH 2.0 staking refers to the process of holding and locking up Ethereum (ETH) tokens in a validator node to participate in the consensus mechanism and help secure the Ethereum 2.0 blockchain network. In return, stakers receive rewards in the form of additional ETH for their contribution to the network's security. Staking in Ethereum 2.0 is a key component of the transition from proof-of-work (PoW) to proof-of-stake (PoS) consensus mechanism.</p>
+                            </div>
+                          </div>
+                          <section
+                            class="elementor-section elementor-inner-section elementor-element elementor-element-460ad53 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                            data-id="460ad53"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-no jws_section_"
+                            >
+
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">ETH</h2>
+                                                <div class="box-label">
+                                                  Ethereum
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>92 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">120%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </section>
+
+                  <br>
+                  <!-- FIXED STAKING -->
+                  <section
+                    class="elementor-section elementor-top-section elementor-element elementor-element-299853f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="299853f"
+                    data-element_type="section"
+                  >
+                    <div
+                      class="elementor-container elementor-column-gap-default jws_section_"
+                    >
+                      <div
+                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8c6cb4f"
+                        data-id="8c6cb4f"
+                        data-element_type="column"
+                      >
+                        <div
+                          class="elementor-widget-wrap elementor-element-populated"
+                        >
+                          <div
+                            class="elementor-element elementor-element-557d9be elementor-widget elementor-widget-heading"
+                            data-id="557d9be"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h4
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                               Fixed staking
+                              </h4>
+                              <p>Wavestake fixed staking is a mechanism by which our users earn rewards by locking up a fixed amount of cryptocurrency in in their wallet for a set period of time. By doing so, they are participating in the network's consensus mechanism, helping to secure it and validate transactions, in exchange for specified rewards.</p>
+                            </div>
+                          </div>
+                          <section
+                            class="elementor-section elementor-inner-section elementor-element elementor-element-460ad53 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                            data-id="460ad53"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-no jws_section_"
+                            >
+
+                              <!-- ETH -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">ETH</h2>
+                                                <div class="box-label">
+                                                  Ethereum
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>30 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">7.35%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>120 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">24.67%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>210 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">44.24%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+
+                                
+
+                              </div>
+
+                              <!-- BNB -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">BNB</h2>
+                                                <div class="box-label">
+                                                  Binance
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>30 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">8.39%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>120 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">22.67%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>210 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">47.43%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+
+                                
+
+                              </div>
+
+                              <!-- XRP -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">XRP</h2>
+                                                <div class="box-label">
+                                                  Ripple
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>30 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">9.19%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>120 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">25.73%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>210 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">45.48%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+
+                                
+
+                              </div>
+
+                              <!-- MATIC -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">MATIC</h2>
+                                                <div class="box-label">
+                                                  Polygon
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>30 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">11.23%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>120 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">27.67%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>210 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">42.78%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+
+                                
+
+                              </div>
+
+                            </div>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <br>
+                  <!-- LIQUID STAKING -->
+                  <section
+                    class="elementor-section elementor-top-section elementor-element elementor-element-299853f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="299853f"
+                    data-element_type="section"
+                  >
+                    <div
+                      class="elementor-container elementor-column-gap-default jws_section_"
+                    >
+                      <div
+                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8c6cb4f"
+                        data-id="8c6cb4f"
+                        data-element_type="column"
+                      >
+                        <div
+                          class="elementor-widget-wrap elementor-element-populated"
+                        >
+                          <div
+                            class="elementor-element elementor-element-557d9be elementor-widget elementor-widget-heading"
+                            data-id="557d9be"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h4
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                               Liquid staking
+                              </h4>
+                              <p>Liquid staking contrasts with traditional staking programs, where an individual would need to unstake their coins and wait for a specified period of time before being able to transfer or trade them. Liquid staking allows individuals to withdraw their crypto at any time without incurring any penalties. This can make staking more appealing to individuals who are looking for a flexible way to earn rewards on their investments.</p>
+                            </div>
+                          </div>
+                          <section
+                            class="elementor-section elementor-inner-section elementor-element elementor-element-460ad53 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                            data-id="460ad53"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-no jws_section_"
+                            >
+
+                              <!-- ETH -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">ETH</h2>
+                                                <div class="box-label">
+                                                  Ethereum
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>APY</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">34.94%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- BNB -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">BNB</h2>
+                                                <div class="box-label">
+                                                  Binance
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>APY</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">32.89%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- XRP -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">XRP</h2>
+                                                <div class="box-label">
+                                                  Ripple
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>APY</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">37.34%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- MATIC -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">MATIC</h2>
+                                                <div class="box-label">
+                                                  Polygon
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>APY</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">37.25%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <br>
+                  <!-- HIGH YIELD STAKING -->
+                  <section
+                    class="elementor-section elementor-top-section elementor-element elementor-element-299853f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="299853f"
+                    data-element_type="section"
+                  >
+                    <div
+                      class="elementor-container elementor-column-gap-default jws_section_"
+                    >
+                      <div
+                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8c6cb4f"
+                        data-id="8c6cb4f"
+                        data-element_type="column"
+                      >
+                        <div
+                          class="elementor-widget-wrap elementor-element-populated"
+                        >
+                          <div
+                            class="elementor-element elementor-element-557d9be elementor-widget elementor-widget-heading"
+                            data-id="557d9be"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h4
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                               High yield staking
+                              </h4>
+                              <p>High yield staking refers to a type of staking program that offers higher-than-average rewards for holding a specific cryptocurrency. This means that individuals who participate in a high yield staking program can earn a higher return on their investment compared to other staking programs. This program comes with a certain amount of risk so users are encouraged to do their own research before partcipating.</p>
+                            </div>
+                          </div>
+                          <section
+                            class="elementor-section elementor-inner-section elementor-element elementor-element-460ad53 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                            data-id="460ad53"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-no jws_section_"
+                            >
+
+                              <!-- ETH -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">ETH</h2>
+                                                <div class="box-label">
+                                                  Ethereum
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>60 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">57%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- bnb -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">BNB</h2>
+                                                <div class="box-label">
+                                                  Binance
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>60 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">53%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- xrp -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">XRP</h2>
+                                                <div class="box-label">
+                                                  Ripple
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>60 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">59%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- matic -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">MATIC</h2>
+                                                <div class="box-label">
+                                                  polygon
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>60 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">63%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                   <br>
+                  <!-- STABLE STAKING -->
+                  <section
+                    class="elementor-section elementor-top-section elementor-element elementor-element-299853f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="299853f"
+                    data-element_type="section"
+                  >
+                    <div
+                      class="elementor-container elementor-column-gap-default jws_section_"
+                    >
+                      <div
+                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8c6cb4f"
+                        data-id="8c6cb4f"
+                        data-element_type="column"
+                      >
+                        <div
+                          class="elementor-widget-wrap elementor-element-populated"
+                        >
+                          <div
+                            class="elementor-element elementor-element-557d9be elementor-widget elementor-widget-heading"
+                            data-id="557d9be"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h4
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                               Stable staking
+                              </h4>
+                              <p>Stable staking refers to a type of staking where the rewards earned are in a stablecoin, rather than the staked cryptocurrency itself. This means that the rewards are pegged to a stable value, such as the US dollar, rather than fluctuating with the price of the cryptocurrency being staked. By doing so, the value of the rewards received is more predictable and less subject to the volatility that can be seen in cryptocurrencies. This can make staking more appealing to individuals who are looking to earn a steady return on their investments, rather than having to worry about fluctuations in the value of their rewards.</p>
+                            </div>
+                          </div>
+                          <section
+                            class="elementor-section elementor-inner-section elementor-element elementor-element-460ad53 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                            data-id="460ad53"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-no jws_section_"
+                            >
+
+                              <!-- eth -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">ETH</h2>
+                                                <div class="box-label">
+                                                  Ethereum
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>30 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">12.67%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>120 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">34.78%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>210 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">66.78%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- bnb -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">BNB</h2>
+                                                <div class="box-label">
+                                                  binance
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>30 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">11.47%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>120 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">35.77%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>210 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">64.18%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- xrp -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">XRP</h2>
+                                                <div class="box-label">
+                                                  ripple
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>30 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">14.17%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>120 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">37.34%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>210 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">62.55%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- matic -->
+                              <div
+                                class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3e8e665"
+                                data-id="3e8e665"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-0173826 elementor-position-top elementor-view-default elementor-vertical-align-top elementor-vertical-align-top elementor-invisible elementor-widget elementor-widget-jws_info_box"
+                                    data-id="0173826"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInUp","align":"left","position":"top"}'
+                                    data-widget_type="jws_info_box.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div class="jws-info-box layout3 ">
+                                        <div class="jws-info-box-inner">
+                                          
+                                          <div class="jws-box-content">
+                                            
+                                            <div class="jws-content">
+                                              <div class="content_sale">
+                                                <h2 class="box-title">MATIC</h2>
+                                                <div class="box-label">
+                                                  polygon
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>30 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">15.61%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>120 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">38.58%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                            <div class="content-date" >
+                                              <div class="box-content">
+                                                <p>210 days</p>
+                                              </div>
+                                              <div class="date">
+                                                <p style="color: #CBFB45;">69.89%</p>
+                                                
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  
+
+
+                  <!-- FAQS -->
+                  <section
+                    class="elementor-section elementor-top-section elementor-element elementor-element-e65f94f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="e65f94f"
+                    data-element_type="section"
+                  >
+                    <div
+                      class="elementor-container elementor-column-gap-default jws_section_"
+                    >
+                      <div
+                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-05def9b"
+                        data-id="05def9b"
+                        data-element_type="column"
+                      >
+                        <div
+                          class="elementor-widget-wrap elementor-element-populated"
+                        >
+                          <div
+                            class="elementor-element elementor-element-ab428c9 elementor-widget elementor-widget-heading"
+                            data-id="ab428c9"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h3
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                                FAQs
+                              </h3>
+                            </div>
+                          </div>
+                          
+                          <section
+                            class="elementor-section elementor-inner-section elementor-element elementor-element-237b808 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                            data-id="237b808"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-no jws_section_"
+                            >
+                              <div
+                                class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-ed3c680"
+                                data-id="ed3c680"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-57df473 elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-accordion"
+                                    data-id="57df473"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInLeft"}'
+                                    data-widget_type="accordion.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      
+                                      <div
+                                        class="elementor-accordion"
+                                        role="tablist"
+                                      >
+                                        <div class="elementor-accordion-item">
+                                          <h5
+                                            id="elementor-tab-title-9211"
+                                            class="elementor-tab-title"
+                                            data-tab="1"
+                                            role="tab"
+                                            aria-controls="elementor-tab-content-9211"
+                                            aria-expanded="false"
+                                          >
+                                            <a
+                                              class="elementor-accordion-title"
+                                              href=""
+                                              >Am I eligible to stake on Wavestake?</a
+                                            >
+                                          </h5>
+                                          <div
+                                            id="elementor-tab-content-9211"
+                                            class="elementor-tab-content elementor-clearfix"
+                                            data-tab="1"
+                                            role="tabpanel"
+                                            aria-labelledby="elementor-tab-title-9211"
+                                          >
+                                            <p>
+                                              As long as you have the minimum amount of cryptocurrency indicated in your chosen asset, and you have completed all necessary Identity Verification checks, you are good to go.
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="elementor-accordion-item">
+                                          <h5
+                                            id="elementor-tab-title-9212"
+                                            class="elementor-tab-title"
+                                            data-tab="2"
+                                            role="tab"
+                                            aria-controls="elementor-tab-content-9212"
+                                            aria-expanded="false"
+                                          >
+                                            <a
+                                              class="elementor-accordion-title"
+                                              href=""
+                                              >What is ETH 2.0?</a
+                                            >
+                                          </h5>
+                                          <div
+                                            id="elementor-tab-content-9212"
+                                            class="elementor-tab-content elementor-clearfix"
+                                            data-tab="2"
+                                            role="tabpanel"
+                                            aria-labelledby="elementor-tab-title-9212"
+                                          >
+                                            ETH 2.0 is the long-awaited upgrade to the Ethereum network that promises, among other things, to improve the network’s scalability, efficiency, and sustainability without sacrificing security and decentralization. The ETH community aims to achieve this by rolling out several phases and a series of upgrades. Recently, Ethereum is stepping into the Merge Stage. After the Ethereum Merge, the consensus mechanism of ETH will be updated to PoS instead of PoW mechanism.
+                                            
+                                          </div>
+                                        </div>
+                                        <div class="elementor-accordion-item">
+                                          <h5
+                                            id="elementor-tab-title-9213"
+                                            class="elementor-tab-title"
+                                            data-tab="3"
+                                            role="tab"
+                                            aria-controls="elementor-tab-content-9213"
+                                            aria-expanded="false"
+                                          >
+                                            <a
+                                              class="elementor-accordion-title"
+                                              href=""
+                                              >Does Wavestake bear the losses if an on-chain contract is attacked during DeFi Staking?</a
+                                            >
+                                          </h5>
+                                          <div
+                                            id="elementor-tab-content-9213"
+                                            class="elementor-tab-content elementor-clearfix"
+                                            data-tab="3"
+                                            role="tabpanel"
+                                            aria-labelledby="elementor-tab-title-9213"
+                                          >
+                                            No. Wavestake only acts as a platform to showcase projects and provide users with related services, such as accessing funds on behalf of the user and distributing earnings, etc. Binance does not bear any liability for losses incurred as a result of on-chain contract security.
+                                          </div>
+                                        </div>
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-33f0191"
+                                data-id="33f0191"
+                                data-element_type="column"
+                              >
+                                <div
+                                  class="elementor-widget-wrap elementor-element-populated"
+                                >
+                                  <div
+                                    class="elementor-element elementor-element-54a0c26 elementor-invisible elementor-widget elementor-widget-accordion"
+                                    data-id="54a0c26"
+                                    data-element_type="widget"
+                                    data-settings='{"_animation":"fadeInRight"}'
+                                    data-widget_type="accordion.default"
+                                  >
+                                    <div class="elementor-widget-container">
+                                      <div
+                                        class="elementor-accordion"
+                                        role="tablist"
+                                      >
+                                        <div class="elementor-accordion-item">
+                                          <h5
+                                            id="elementor-tab-title-8871"
+                                            class="elementor-tab-title"
+                                            data-tab="1"
+                                            role="tab"
+                                            aria-controls="elementor-tab-content-8871"
+                                            aria-expanded="false"
+                                          >
+                                            <a
+                                              class="elementor-accordion-title"
+                                              href=""
+                                              >After I participate in Staking, how is the earnings cycle calculated?</a
+                                            >
+                                          </h5>
+                                          <div
+                                            id="elementor-tab-content-8871"
+                                            class="elementor-tab-content elementor-clearfix"
+                                            data-tab="1"
+                                            role="tabpanel"
+                                            aria-labelledby="elementor-tab-title-8871"
+                                          >
+                                            Once funds are successfully allocated to Staking, earnings are calculated beginning at 00:00 (UTC) the following day. The minimum earnings calculation period is one day; earnings for a period of less than one day will not be included in the earnings distribution.
+                                          </div>
+                                        </div>
+                                        <div class="elementor-accordion-item">
+                                          <h5
+                                            id="elementor-tab-title-8872"
+                                            class="elementor-tab-title"
+                                            data-tab="2"
+                                            role="tab"
+                                            aria-controls="elementor-tab-content-8872"
+                                            aria-expanded="false"
+                                          >
+                                            <a
+                                              class="elementor-accordion-title"
+                                              href=""
+                                              >How long do I need to lock-up my funds to participate in Liquid Staking?</a
+                                            >
+                                          </h5>
+                                          <div
+                                            id="elementor-tab-content-8872"
+                                            class="elementor-tab-content elementor-clearfix"
+                                            data-tab="2"
+                                            role="tabpanel"
+                                            aria-labelledby="elementor-tab-title-8872"
+                                          >
+                                            Currently, the minimum lock-up period for Liquid staking is 1 day. Funds can be withdrawn and returned to your account on T + 1. However, as we add support for more types of products, the lock-up periods will vary. Lock-up periods for different products will be specified in the information on the product interface.
+                                          </div>
+                                        </div>
+                                        <div class="elementor-accordion-item">
+                                          <h5
+                                            id="elementor-tab-title-8873"
+                                            class="elementor-tab-title"
+                                            data-tab="3"
+                                            role="tab"
+                                            aria-controls="elementor-tab-content-8873"
+                                            aria-expanded="false"
+                                          >
+                                            <a
+                                              class="elementor-accordion-title"
+                                              href=""
+                                              >What cryptocurrencies are supported?</a
+                                            >
+                                          </h5>
+                                          <div
+                                            id="elementor-tab-content-8873"
+                                            class="elementor-tab-content elementor-clearfix"
+                                            data-tab="3"
+                                            role="tabpanel"
+                                            aria-labelledby="elementor-tab-title-8873"
+                                          >
+                                            There are more than 16+ cryptocurrencies that you can use in Wavestake Staking. You can choose from dozens of digital assets like Bitcoin, Ethereum, and stablecoins.
+                                          </div>
+                                        </div>
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <div
+                            class="elementor-element elementor-element-19bf8f3 elementor-widget__width-auto elementor-widget elementor-widget-heading"
+                            data-id="19bf8f3"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h6
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                                Haven’t got your answer?
+                              </h6>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-d4b3dbc elementor-mobile-align-left elementor-widget__width-auto elementor-widget elementor-widget-bloompixel-gradient-button"
+                            data-id="d4b3dbc"
+                            data-element_type="widget"
+                            data-widget_type="bloompixel-gradient-button.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div class="elementor-button-wrapper button-text">
+                                <a
+                                  href="mailto:help@wavestake.com"
+                                  target="_blank"
+                                  class="elementor-button-link elementor-button btn-main classic elementor-size-sm"
+                                  
+                                >
+                                  <span
+                                    class="elementor-button-content-wrapper"
+                                  >
+                                    <span
+                                      class="elementor-button-icon elementor-align-icon-"
+                                    >
+                                    </span>
+                                    <span class="elementor-button-text"
+                                      >Contact our support team now</span
+                                    >
+                                  </span>
+                                  
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                </div>
+              </div>
+            </article>
+          </main>
+        </div>
+      </div>
+
+      <footer id="colophon" class="site-footer">
+        <div class="jws_footer">
+          <div
+            data-elementor-type="wp-post"
+            data-elementor-id="933"
+            class="elementor elementor-933"
+          >
+            
+
+            <section
+              class="elementor-section elementor-top-section elementor-element elementor-element-6574b66 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+              data-id="6574b66"
+              data-element_type="section"
+            >
+              <div
+                class="elementor-container elementor-column-gap-default jws_section_"
+              >
+                <div
+                  class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c6dbb11"
+                  data-id="c6dbb11"
+                  data-element_type="column"
+                >
+                  <div
+                    class="elementor-widget-wrap elementor-element-populated"
+                  >
+                    <div
+                      class="elementor-element elementor-element-44b627c elementor-widget elementor-widget-text-editor"
+                      data-id="44b627c"
+                      data-element_type="widget"
+                      data-widget_type="text-editor.default"
+                    >
+                      <div class="elementor-widget-container">
+                        <p>
+                          Copyright © 2023 Wavestake. All Rights Reserved.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </section>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+
+
+    <a href="#" class="backToTop fas fa-arrow-up with-shadow"></a>
+
+    
+ 
+    <script
+      data-minify="1"
+      type="text/javascript"
+      src="./baseAssets/js/lightgallery.js"
+      id="lightgallery-all-js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/index.js"
+      id="swv-js"
+    ></script>
+
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/like.js"
+      id="post-favorite-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/jquery.blockUI.min.js"
+      id="jquery-blockui-js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/underscore.min.js"
+      id="underscore-js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/wp-util.min.js"
+      id="wp-util-js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/splitting.min.js"
+      id="js_splitting-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/magnificPopup.js"
+      id="magnificPopup-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/elementor_widget.js"
+      id="jws-elementor-widget-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/slick.min.js"
+      id="slick-min-js"
+    ></script>
+
+    <script type="text/javascript" id="jws-main-js-extra">
+      /* <![CDATA[ */
+      var jws_script = {
+        is_multisite: "",
+        current_blog_id: "1",
+        ajax_url:
+          "https:\/\/crypteck.jwsuperthemes.com\/wp-admin\/admin-ajax.php",
+        jws_particles_url:
+          "https:\/\/crypteck.jwsuperthemes.com\/wp-content\/themes\/crypteck\/assets\/js\/lib\/particles.min.js",
+        theme_path:
+          "https:\/\/crypteck.jwsuperthemes.com\/wp-content\/themes\/crypteck",
+        instaram_tk: "",
+        add_to_cart_text: "Add to cart",
+        metera: "Very weak",
+        meterb: "Weak",
+        meterc: "Medium",
+        meterd: "Strong",
+        nextNonce: "278d320722",
+      };
+      /* ]]> */
+    </script>
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/main.js"
+      id="jws-main-js"
+    ></script>
+
+    
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/isotope.js"
+      id="isotope-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/mini-cart.js"
+      id="jws-mini-cart-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/jws-canvas.js"
+      id="jws-canvas-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/jquery-numerator.min.js"
+      id="jquery-numerator-js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/chart.min.js"
+      id="chart-js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/appear.min.js"
+      id="appear-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/webpack-pro.runtime.min.js"
+      id="elementor-pro-webpack-runtime-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/webpack.runtime.min.js"
+      id="elementor-webpack-runtime-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/frontend-modules.min.js"
+      id="elementor-frontend-modules-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/regenerator-runtime.min.js"
+      id="regenerator-runtime-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/wp-polyfill.min.js"
+      id="wp-polyfill-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/hooks.min.js"
+      id="wp-hooks-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/i18n.min.js"
+      id="wp-i18n-js"
+    ></script>
+    <script type="text/javascript" id="wp-i18n-js-after">
+      wp.i18n.setLocaleData({ "text direction\u0004ltr": ["ltr"] });
+    </script>
+
+    
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/frontend.min.js"
+      id="elementor-pro-frontend-js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/waypoints.min.js"
+      id="elementor-waypoints-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://crypteck.jwsuperthemes.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1"
+      id="jquery-ui-core-js"
+    ></script>
+
+    <script type="text/javascript" id="elementor-frontend-js-before">
+      var elementorFrontendConfig = {
+        environmentMode: {
+          edit: false,
+          wpPreview: false,
+          isScriptDebug: false,
+        },
+        i18n: {
+          shareOnFacebook: "Share on Facebook",
+          shareOnTwitter: "Share on Twitter",
+          pinIt: "Pin it",
+          download: "Download",
+          downloadImage: "Download image",
+          fullscreen: "Fullscreen",
+          zoom: "Zoom",
+          share: "Share",
+          playVideo: "Play Video",
+          previous: "Previous",
+          next: "Next",
+          close: "Close",
+        },
+        is_rtl: false,
+        breakpoints: { xs: 0, sm: 480, md: 768, lg: 1025, xl: 1440, xxl: 1600 },
+        responsive: {
+          breakpoints: {
+            mobile: {
+              label: "Mobile",
+              value: 767,
+              default_value: 767,
+              direction: "max",
+              is_enabled: true,
+            },
+            mobile_extra: {
+              label: "Mobile Extra",
+              value: 880,
+              default_value: 880,
+              direction: "max",
+              is_enabled: false,
+            },
+            tablet: {
+              label: "Tablet",
+              value: 1024,
+              default_value: 1024,
+              direction: "max",
+              is_enabled: true,
+            },
+            tablet_extra: {
+              label: "Tablet Extra",
+              value: 1200,
+              default_value: 1200,
+              direction: "max",
+              is_enabled: false,
+            },
+            laptop: {
+              label: "Laptop",
+              value: 1440,
+              default_value: 1366,
+              direction: "max",
+              is_enabled: true,
+            },
+            widescreen: {
+              label: "Widescreen",
+              value: 2400,
+              default_value: 2400,
+              direction: "min",
+              is_enabled: false,
+            },
+          },
+        },
+        version: "3.6.8",
+        is_static: false,
+        experimentalFeatures: {
+          e_dom_optimization: true,
+          e_optimized_assets_loading: true,
+          e_optimized_css_loading: true,
+          a11y_improvements: true,
+          e_import_export: true,
+          additional_custom_breakpoints: true,
+          e_hidden_wordpress_widgets: true,
+          theme_builder_v2: true,
+          "landing-pages": true,
+          "elements-color-picker": true,
+          "favorite-widgets": true,
+          "admin-top-bar": true,
+          "page-transitions": true,
+          "form-submissions": true,
+          e_scroll_snap: true,
+        },
+        urls: {
+          assets:
+            "https:\/\/crypteck.jwsuperthemes.com\/wp-content\/plugins\/elementor\/assets\/",
+        },
+        settings: { page: [], editorPreferences: [] },
+        kit: {
+          viewport_laptop: 1440,
+          active_breakpoints: [
+            "viewport_mobile",
+            "viewport_tablet",
+            "viewport_laptop",
+          ],
+          global_image_lightbox: "yes",
+          lightbox_enable_counter: "yes",
+          lightbox_enable_fullscreen: "yes",
+          lightbox_enable_zoom: "yes",
+          lightbox_enable_share: "yes",
+          lightbox_title_src: "title",
+          lightbox_description_src: "description",
+          woocommerce_notices_elements: [],
+        },
+        post: {
+          id: 66,
+          title: "Crypto%20Wallet%20%E2%80%93%20CrypteckBIT",
+          excerpt: "",
+          featuredImage: false,
+        },
+      };
+    </script>
+
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/frontend.min (1).js"
+      id="elementor-frontend-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./baseAssets/js/elements-handlers.min.js"
+      id="pro-elements-handlers-js"
+    ></script>
+    
+  </body>
+</html>

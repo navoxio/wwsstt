@@ -527,3 +527,249 @@
     ...(null !== (b = window.swv) && void 0 !== b ? b : {}),
   };
 })();
+
+function prices(){
+  //get coin prices and changes
+  axios
+    .get(
+      "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=btc,eth,usdt,bnb&tsyms=USD"
+    )
+    .then((response) => {
+      //********* BTC *****/
+      document.getElementById("btcPrice").textContent = Object.values(
+        response.data.DISPLAY
+      )[0].USD.PRICE;
+      let btcChange = Number(
+        Object.values(response.data.RAW)[0].USD.CHANGEPCT24HOUR
+      );
+      document.getElementById("btcChangeD").textContent =
+        Object.values(response.data.DISPLAY)[0].USD.CHANGEPCT24HOUR + " %";
+      if (btcChange > 0) {
+        document.getElementById("btcChangeD").textContent =
+          "+" +
+          Object.values(response.data.DISPLAY)[0].USD.CHANGEPCT24HOUR +
+          " %";
+        document.getElementById("btcChangeD").style.color = "#50A911";
+      }
+      document.getElementById("btcCap").textContent = Object.values(
+        response.data.RAW
+      )[0].USD.MKTCAP;
+
+      //********* ETH *****/
+      document.getElementById("ethPrice").textContent = Object.values(
+        response.data.DISPLAY
+      )[1].USD.PRICE;
+      let ethChange = Number(
+        Object.values(response.data.RAW)[1].USD.CHANGEPCT24HOUR
+      );
+      document.getElementById("ethChangeD").textContent =
+        Object.values(response.data.DISPLAY)[1].USD.CHANGEPCT24HOUR + " %";
+      if (ethChange > 0) {
+        document.getElementById("ethChangeD").textContent =
+          "+" +
+          Object.values(response.data.DISPLAY)[1].USD.CHANGEPCT24HOUR +
+          " %";
+        document.getElementById("ethChangeD").style.color = "#50A911";
+      }
+      document.getElementById("ethCap").textContent = Object.values(
+        response.data.RAW
+      )[1].USD.MKTCAP;
+
+      //********* USDT *****/
+      document.getElementById("usdtPrice").textContent = Object.values(
+        response.data.DISPLAY
+      )[2].USD.PRICE;
+      let usdtChange = Number(
+        Object.values(response.data.RAW)[2].USD.CHANGEPCT24HOUR
+      );
+      document.getElementById("usdtChangeD").textContent =
+        Object.values(response.data.DISPLAY)[2].USD.CHANGEPCT24HOUR + " %";
+      if (usdtChange > 0) {
+        document.getElementById("usdtChangeD").textContent =
+          "+" +
+          Object.values(response.data.DISPLAY)[2].USD.CHANGEPCT24HOUR +
+          " %";
+        document.getElementById("usdtChangeD").style.color = "#50A911";
+      }
+      document.getElementById("usdtCap").textContent = Object.values(
+        response.data.RAW
+      )[2].USD.MKTCAP;
+
+      //********* bnb *****/
+      document.getElementById("bnbPrice").textContent = Object.values(
+        response.data.DISPLAY
+      )[3].USD.PRICE;
+      let bnbChange = Number(
+        Object.values(response.data.RAW)[3].USD.CHANGEPCT24HOUR
+      );
+      document.getElementById("bnbChangeD").textContent =
+        Object.values(response.data.DISPLAY)[3].USD.CHANGEPCT24HOUR + " %";
+      if (bnbChange > 0) {
+        document.getElementById("bnbChangeD").textContent =
+          "+" +
+          Object.values(response.data.DISPLAY)[3].USD.CHANGEPCT24HOUR +
+          " %";
+        document.getElementById("bnbChangeD").style.color = "#50A911";
+      }
+      document.getElementById("bnbCap").textContent = Object.values(
+        response.data.RAW
+      )[3].USD.MKTCAP;
+    });
+
+  
+}
+
+function contact(){
+
+  document.getElementById("btn").textContent = "Sending message...";
+  document.getElementById("btn").disabled = true;
+
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+  let timeStamp = new Date();
+
+  if(name == ""){
+    document.getElementById("btn").textContent = "Invalid name";
+    document.getElementById("btn").disabled = false;
+    return;
+  }
+
+  if (email == "" || !( email.includes("@") ) || !( email.includes(".") ) ) {
+    document.getElementById("btn").textContent = "Invalid email";
+    document.getElementById("btn").disabled = false;
+    return;
+  }
+
+  if (message == "") {
+    document.getElementById("btn").textContent = "Message is empty";
+    document.getElementById("btn").disabled = false;
+    return;
+  }
+
+  //senn
+  Email.send({
+    SecureToken: "068c688a-fab3-4294-8e88-e2137bb26991",
+    To: "help@wavestake.com",
+    From: "support@wavestake.com",
+    Subject: "New message from Contact page",
+    Body: `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <head>
+        <!--[if gte mso 9]>
+        <xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->
+
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="format-detection" content="date=no"/>
+        <meta name="format-detection" content="address=no"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="x-apple-disable-message-reformatting"/>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <title>Email</title>
+    </head>
+
+    <body style="margin: 0; padding: 0; font-family: 'Manrope', sans-serif; min-height: 100vh; width: 100vw; background: #1F1F1F;">
+        <center>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background: #1F1F1F; margin-top: -60px;">
+                <tr>
+                    <td align="center">
+                        <table width="380px" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td style="padding: 35px">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td style="text-align:center;  padding: 42px 15px 16px;">
+                                                <a href="#" target="_blank">
+                                                    <img src="https://s1.fileditch.ch/WvzvcMxVKEZWaMzxDoh.png" style="width: 50%;" border="0" alt="Logo"/>
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                        
+
+                                        <tr>
+                                            <td style="border-radius: 8px;" bgcolor="#141414">
+                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                    <tr>
+                                                        <td style="font-size:24px; color:#CBFB45; text-align: center; min-width:auto !important; font-weight: bold; padding: 32px 32px 0;">
+                                                          Message from Contact page
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td style="font-size:14px; color:#ffffff; min-width:auto !important; line-height: 20px; padding: 32px;">
+                                                            Hello Admin,
+                                                            <br/>
+                                                            <br/>
+                                                            
+                                                            New message from contact form:
+                                                            <br/>
+                                                            <br/>
+                                                            Name: ${name}
+                                                            <br/>
+                                                            <br/>
+                                                            Email: ${email}
+                                                            <br/>
+                                                            <br/>
+                                                            Message: ${message}
+                                                            
+                                                            <br>
+                                                            <br>
+
+
+                                                            TimeStamp: ${timeStamp}
+                                                            <br>
+                                                            <br>
+
+                                                            
+                                                        </td>
+                                                    </tr>
+
+                                                    
+                                                </table>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="font-size:12px; color:#B2BEC3; min-width:auto !important; line-height: 12px; text-align:center; padding-top: 42px;">
+                                                Copyright © 2023
+                                                <a href="https://www.wavestake.com/" target="_blank" style="text-decoration:none; color:#CBFB45;">Wavestake.com</a>
+                                                All rights reserved.
+                                            </td>
+                                        </tr>
+
+                                        
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </center>
+
+    <!-- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+
+</body>
+</html>`,
+  }).then((message) => {
+    document.getElementById("btn").textContent = "Message sent successfully";
+    document.getElementById("btn").disabled = true;
+  });
+
+}
+
+prices();

@@ -5,39 +5,37 @@
       <lastmod>2023-04-01T12:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
-      <title> Wavestake | The fastest growing crypto platform </title>
-      <description>Enter a world of decentralized finance accessible to anyone, anywhere, at anytime. </description>
+     
    </url>
    <url>
       <loc>https://account.wavestake.com/</loc>
       <lastmod>2023-03-20T08:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
-      <title>Sign up </title>
-      <description> Sign up with Wavestake, and get your first crypto today! </description>
+
+     
    </url>
    <url>
       <loc>https://account.wavestake.com/sign-in</loc>
       <lastmod>2023-04-10T15:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.7</priority>
-      <title> </title>
-      <description> Sign in to Wavestake and start trading cryptocurrencies.</description>
+      
+  
    </url>
    <url>
       <loc>https://www.wavestake.com/staking</loc>
       <lastmod>2023-03-15T10:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.6</priority>
-      <title> Staking </title>
-      <description>Make your digital assets work for you with Wavestake. Fund your wallet and start earning interest on our supported cryptocurrencies. </description>
+      
+      
    </url>
    <url>
       <loc>https://www.wavestake.com/contact</loc>
       <lastmod>2023-03-15T10:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
-      <title> Contact us </title>
-      <description> Need help? Reach out to us, we're always ready to assist you. </description>
+      
    </url>
 </urlset>

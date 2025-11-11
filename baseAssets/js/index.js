@@ -621,6 +621,10 @@ function prices(){
 
 function contact(){
 
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+  
   document.getElementById("btn").textContent = "Sending message...";
   document.getElementById("btn").disabled = true;
 

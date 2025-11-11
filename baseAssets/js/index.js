@@ -624,7 +624,7 @@ function contact(){
   document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
   });
-  
+
   document.getElementById("btn").textContent = "Sending message...";
   document.getElementById("btn").disabled = true;
 
@@ -775,5 +775,9 @@ function contact(){
   });
 
 }
+
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
 
 prices();
